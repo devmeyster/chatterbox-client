@@ -9,6 +9,7 @@ var App = function(){
   this.name = location.search.split('=')[1];
   this.rooms = {};
   this.currentRoom = 'all';
+  this.friends = {};
 };
 
 App.prototype.init = function(){
@@ -58,23 +59,29 @@ App.prototype.fetch = function(roomname){
     data: data,
     contentType: 'application/json',
     success: function (data) {
-      console.dir(data);
+      // console.dir(data);
       $('.messages div').remove();
 
       _.each(data.  results, function(item){
         var $usr = $('<div></div>');
         var $msg = $('<div></div>');
         var $room = $('<div></div>');
+        var $output;
 
         $usr.text(item.username);
         $msg.text(item.text);
         $room.text(item.roomname);
+        $output = $('<div><a>' + $usr.html() + '</a> : ' + $msg.html() + '</div>');
 
-        $('.messages').append('<div>' + $usr.html() + ' : ' + $msg.html() + '</div>');
+        if (self.friends.hasOwnProperty(item.username)) {
+          $output.addClass('friends');
+        }
+
+        $('.messages').append($output);
 
         if (!self.rooms.hasOwnProperty(item.roomname) && item.roomname !== 'undefined') {
           self.rooms[item.roomname] = item.roomname;
-          $('.rooms').append('<a href = #' + item.roomname + '>' + $room.html() + '</a>');
+          $('.rooms').append('<div><a href = #' + item.roomname + '>' + $room.html() + '</a></div>');
         }
       });
     },
@@ -82,6 +89,23 @@ App.prototype.fetch = function(roomname){
       console.error('chatterbox: Failed to send message');
     }
   });
+
+  $('a').on('click', function() {
+    // console.log(this.text);
+    self.addFriend(this.text);
+    console.log("added friend: " + this.text);
+  });
+};
+
+App.prototype.addFriend = function(friend) {
+  if (!this.friends.hasOwnProperty(friend)) {
+    $('.friends-list').append('<div><a>' + friend + '</a></div>');
+  }
+  this.friends[friend] = friend;
+  console.log('added friend');
+  // $('.no-friends').remove();
+
+
 };
 
 window.onhashchange = function() {

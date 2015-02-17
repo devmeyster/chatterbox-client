@@ -10,7 +10,7 @@ a {
 }
 
 #main {
-    width: 800px;
+    width: 900px;
     margin: auto;
     text-align: left;
     background: white;
@@ -74,6 +74,14 @@ form input[type=text] {
 button {
     display: inline-block;
     padding: 10px;
+}
+
+a {
+    display: inline;
+}
+
+.friends {
+    font-weight: bold;
 }
 
 .chat {
