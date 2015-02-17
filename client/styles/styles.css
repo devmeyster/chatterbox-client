@@ -13,7 +13,7 @@ a {
     width: 900px;
     margin: auto;
     text-align: left;
-    background: white;
+    background-image: url('../images/wallpaper.jpg');
     padding: 50px 60px;
     border: solid #ddd;
     border-width: 0 1px 1px 1px;
@@ -25,11 +25,20 @@ a {
     margin-bottom: 5px;
     padding: 5px;
 }
+.glyphicon {
+    margin-left: 5px;
+
+}
 
 #main h1 span {
     font-style:italic;
 }
-
+h1 {
+    color: white;
+}
+h3 {
+    color: white;
+}
 #main ul {
     padding-left: 20px;
 }
@@ -53,6 +62,26 @@ a {
 .inputs {
     clear: both;
     overflow: auto;
+}
+
+.friends-list {
+    background-color: white;
+    min-height: 650px;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.rooms {
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    min-height: 650px;
+}
+.messages {
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    min-height: 650px;
 }
 
 form {
