@@ -3,22 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>chatterbox</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
 
     <!-- dependencies -->
 
   </head>
   <body>
-    <div id="main">
-      <h1>chatterbox</h1>
-      <div>
-        <form class="inputs">
-          <input class="user-input" type = "text"/>
-        </form>
-          <button class="send-input">Send</button>
+    <div class="container">
+      <div id="main">
+        <h1>chatterbox</h1>
+        <div class="inputs">
+          <form>
+            <input class="user-input" type = "text"/>
+          </form>
+            <button class="send-input btn btn-default">Send</button>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-8">
+          <div class="messages">
+            <h3>Recent Messages</h3>
+          </div>
+          </div>
+          <div class="col-xs-6 col-md-4">
+          <div class="rooms">
+            <h3>Rooms</h3>
+            <a href="#all">all</a>
+          </div>
+          </div>
+        </div>
+        </div>
       </div>
-      <div class = "messages"></div>
-      <!-- Your HTML goes here! -->
     </div>
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore-min.js"></script>

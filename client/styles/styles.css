@@ -5,8 +5,12 @@ body {
     font-family: arial, sans-serif;
 }
 
+a {
+    display: block;
+}
+
 #main {
-    width: 500px;
+    width: 800px;
     margin: auto;
     text-align: left;
     background: white;
@@ -46,21 +50,30 @@ body {
     line-height: 13px;
 }
 
+.inputs {
+    clear: both;
+    overflow: auto;
+}
+
 form {
-    padding: 20px;
     padding-left: 0;
+    margin-right: 20px;
     margin-bottom: 20px;
+    width: 80%;
+    float: left;
 }
 
 form input[type=text] {
+    display: inline;
     margin-right: 10px;
-    width: 70%;
+    width: 100%;
     font-size: 12px;
-    padding: 5px;
+    padding: 7px;
 }
 
 button {
-    padding: 5px;
+    display: inline-block;
+    padding: 10px;
 }
 
 .chat {
